@@ -14,4 +14,31 @@ html, body, #root {
 
 :root {
 // ... existing code ...
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    filter: blur(1px) brightness(1);
+  }
+  25% {
+    filter: blur(1.5px) brightness(1.2);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: blur(1px) brightness(1);
+  }
+  75% {
+    filter: blur(1.5px) brightness(1.2);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: blur(1px) brightness(1);
+  }
+}
+
+.animated-border {
+  animation: gradient 4s linear infinite;
+  background: linear-gradient(90deg, #00ff00, #00ff88, #00ff00, #00ff88);
+  background-size: 300% 300%;
 } 

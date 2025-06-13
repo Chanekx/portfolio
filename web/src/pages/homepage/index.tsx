@@ -1,12 +1,14 @@
-import { Stack, Typography } from "@mui/material";
+import { Stack } from "@mui/material";
 import Header from "../../parts/header";
+import AboutMeSection from "../aboutme";
+import HomePage from "../home";
 
-const Homepage  = () => {
- return (
+const Homepage = () => {
+  return (
     <Stack height="100vh" width="100%">
-        <Header sx={{backgroundColor:'black'}}/>
-        <Typography> Hi I'm Christian</Typography>
-    </Stack>                                
- )
-}
+      <Header />
+      <HomePage/>
+    </Stack>
+  );
+};
 export default Homepage;
