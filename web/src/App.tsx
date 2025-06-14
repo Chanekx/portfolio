@@ -1,9 +1,9 @@
-import Homepage from "./pages/homepage";
+import Portfolio from "./pages/homepage";
 
 const App = () => {
   return (
     <>
-      <Homepage />
+      <Portfolio />
     </>
   );
 };

@@ -3,14 +3,17 @@ import { Stack, Typography, Paper } from "@mui/material"
 const AboutMeSection = () => {
  return (
     <Stack 
-    minHeight="100vh"
+
+    minHeight="130vh"
       width="100%" 
       alignItems="center" 
       justifyContent="center"
       spacing={8}
       padding={8}
       sx={{
-        background: 'linear-gradient(180deg, #222831 0%, #1a1f28 100%)'
+        background: 'linear-gradient(180deg, #222831 0%, #1a1f28 100%)',
+        paddingTop:'5%'
+        
       }}
     >
         <Stack spacing={4} maxWidth="800px" sx={{paddingTop:'5%'}}>

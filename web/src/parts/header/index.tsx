@@ -1,13 +1,11 @@
 import { Button, Stack } from "@mui/material";
-import type { ActivePage } from "../../pages/homepage/hooks";
-import meImage from "../../assets/me.png";
 
-// type HeaderProps = {
-//   openPage: (page: ActivePage) => void
+type HeaderProps = {
+  setSection: 'home' | 'about'
 
-// }
+}
 
-const Header = ({openPage}: HeaderProps) => {
+const Header = ({setSection}: HeaderProps) => {
   return (
     <Stack
       width="100%"
@@ -16,7 +14,7 @@ const Header = ({openPage}: HeaderProps) => {
       direction="row"
       alignItems="center"
       paddingX={2}
-      sx={{ backgroundColor: "#222831" }}
+      sx={{ backgroundColor: "#213f6b" }}
     >
       <Stack flexGrow={1}>
         <Stack direction="row" alignItems="center" gap={1}>
@@ -25,8 +23,8 @@ const Header = ({openPage}: HeaderProps) => {
       </Stack>
 
       <Stack direction="row" justifyContent="flex-end" gap={2}>
-        <Button onClick={() => openPage('home') }>Home</Button>
-        <Button onClick={() => openPage('about')}>About</Button>
+        <Button onClick={() => setSection('home') }>Home</Button>
+        <Button onClick={() => setSection('about')}>About</Button>
         <Button onClick={() => openPage('techstack')}>TechStack</Button>
         <Button onClick={()=> openPage('projects')}>Projects</Button>
         <Button onClick={() => openPage('contact')}>Contact</Button>
