@@ -1,7 +1,7 @@
 import { Button, Stack } from "@mui/material";
 
 type HeaderProps = {
-  setSection: 'home' | 'about'
+  setSection?: 'home' | 'about'
 
 }
 
