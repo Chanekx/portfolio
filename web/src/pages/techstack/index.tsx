@@ -14,7 +14,7 @@ const TechStack = () => {
         paddingTop: "5%",
       }}
     >
-      <Stack spacing={4} maxWidth="800px" sx={{ paddingTop: "5%" }}>
+      <Stack spacing={4} maxWidth="800px">
         <Typography
           variant="h2"
           sx={{
@@ -25,7 +25,12 @@ const TechStack = () => {
         >
           My Techstack
         </Typography>
-        
+
+      </Stack>
+      <Stack width="100%" height="80vh" sx={{border:'1px solid red'}}>
+          <img>
+          
+          </img>
       </Stack>
     </Stack>
   );

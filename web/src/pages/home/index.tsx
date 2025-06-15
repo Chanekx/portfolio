@@ -25,7 +25,7 @@ const HomePage = () => {
         }}
       >
         <Stack>
-          <div
+          <Stack
             style={{
               width: "500px",
               height: "500px",
@@ -39,7 +39,7 @@ const HomePage = () => {
               filter: "blur(1px)",
             }}
           >
-            <div
+            <Stack
               style={{
                 width: "100%",
                 height: "100%",
@@ -58,8 +58,8 @@ const HomePage = () => {
                   display: "block",
                 }}
               />
-            </div>
-          </div>
+            </Stack>
+          </Stack>
         </Stack>
         <Stack spacing={4}>
           <Typography
