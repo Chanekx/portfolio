@@ -1,8 +1,10 @@
-import { Stack } from "@mui/material";
+import { Stack, Box } from "@mui/material";
 import Header from "../../parts/header";
 import HomePage from "../home";
 import AboutMeSection from "../aboutme";
 import TechStack from "../techstack";
+import MyProjects from "../projects";
+import ContactMe from "../contact";
 
 const Portfolio = () => {
   return (
@@ -18,9 +20,11 @@ const Portfolio = () => {
           },
         }}
       >
-        <HomePage />
-        <AboutMeSection />
-        <TechStack/>
+        <Box id="home"><HomePage /></Box>
+        <Box id="about"><AboutMeSection /></Box>
+        <Box id="techstack"><TechStack /></Box>
+        <Box id="projects"><MyProjects /></Box>
+        <Box id="contact"><ContactMe /></Box>
       </Stack>
     </Stack>
   );
