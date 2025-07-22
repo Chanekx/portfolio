@@ -1,14 +1,21 @@
-import { Button, Stack } from "@mui/material";
+import { Button, Stack, type SxProps } from "@mui/material";
 
-type Section = 'home' | 'about' | 'techstack' | 'projects' | 'contact';
+type Section = "home" | "about" | "techstack" | "projects" | "contact";
 
 type HeaderProps = {
   setSection?: (section: Section) => void;
   activeSection?: Section;
+  sx?: SxProps;
 };
 
-const Header = ({ setSection, activeSection }: HeaderProps) => {
-  const sections: Section[] = ['home', 'about', 'techstack', 'projects', 'contact'];
+const Header = ({ setSection, activeSection, sx }: HeaderProps) => {
+  const sections: Section[] = [
+    "home",
+    "about",
+    "techstack",
+    "projects",
+    "contact",
+  ];
 
   return (
     <Stack
@@ -22,6 +29,7 @@ const Header = ({ setSection, activeSection }: HeaderProps) => {
         position: "sticky",
         top: 0,
         zIndex: 1000,
+        ...sx
       }}
       component="header"
     >
@@ -32,15 +40,20 @@ const Header = ({ setSection, activeSection }: HeaderProps) => {
             fontWeight: "bold",
             fontSize: "1.2rem",
             textTransform: "none",
-            background:"none",
-          "&:hover": { backgroundColor: "#2a4a7b" },
+            background: "none",
+            "&:hover": { backgroundColor: "#2a4a7b" },
           }}
           disableRipple
         >
           Christian
         </Button>
       </Stack>
-      <Stack direction="row" gap={2} component="nav" aria-label="Main navigation">
+      <Stack
+        direction="row"
+        gap={2}
+        component="nav"
+        aria-label="Main navigation"
+      >
         {sections.map((section) => (
           <Button
             key={section}
