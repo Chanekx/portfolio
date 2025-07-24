@@ -1,26 +1,17 @@
-import React, { useState } from "react";
-import { Box, Card, CardMedia, keyframes } from "@mui/material";
+import React, { useState, useEffect, useRef } from "react";
+import { Box, Card, CardMedia } from "@mui/material";
 import { styled } from "@mui/system";
 
 type ScrollCardProps = {
   src: string;
   alt?: string;
-  onClick?: () => void;
+  title?: string;
 };
 
 type ScrollCardsProps = {
   cards: ScrollCardProps[];
   speed?: number;
 };
-
-const scrollAnimation = keyframes`
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 3 - 60px));
-  }
-`;
 
 const ScrollContainer = styled(Box)(() => ({
   width: "100%",
@@ -52,18 +43,28 @@ const ScrollContainer = styled(Box)(() => ({
   },
 }));
 
-const ScrollTrack = styled(Box)<{ $isPaused: boolean; $speed: number }>(
-  ({ $isPaused, $speed }) => ({
-    display: "flex",
-    gap: "20px",
-    animation: `${scrollAnimation} ${$speed}s linear infinite`,
-    animationPlayState: $isPaused ? "paused" : "running",
-    padding: "0 20px",
-    width: "100%",
-    minWidth: "100%",
-    willChange: "transform",
-  })
-);
+const ScrollTrack = styled(Box)<{ 
+  $isPaused: boolean; 
+  $speed: number;
+  $animationDistance: number;
+}>(({ $isPaused, $speed, $animationDistance }) => ({
+  display: "flex",
+  gap: "20px",
+  animation: `scroll-animation ${$speed}s linear infinite`,
+  animationPlayState: $isPaused ? "paused" : "running",
+  padding: "0 20px",
+  width: "fit-content",
+  minWidth: "100%",
+  willChange: "transform",
+  "@keyframes scroll-animation": {
+    "0%": {
+      transform: "translateX(0)",
+    },
+    "100%": {
+      transform: `translateX(-${$animationDistance}px)`,
+    },
+  },
+}));
 
 const ScrollCard = styled(Card)({
   flex: "0 0 250px",
@@ -83,6 +84,29 @@ const ScrollCard = styled(Card)({
   },
 });
 
+const TextOverlay = styled(Box)({
+  position: "absolute",
+  bottom: 0,
+  left: 0,
+  right: 0,
+  background: "linear-gradient(transparent, rgba(0,0,0,0.8))",
+  color: "white",
+  padding: "20px 16px 16px",
+  transform: "translateY(100%)",
+  transition: "transform 0.3s ease",
+  ".scroll-card:hover &": {
+    transform: "translateY(0)",
+  },
+});
+
+const CardTitle = styled("h3")({
+  margin: "0 0 8px 0",
+  fontSize: "18px",
+  fontWeight: "600",
+  lineHeight: "1.2",
+});
+
+
 const CardMediaStyled = styled(CardMedia)(() => ({
   height: "100%",
   width: "100%",
@@ -93,27 +117,41 @@ const CardMediaStyled = styled(CardMedia)(() => ({
   },
 }));
 
-const ScrollCards: React.FC<ScrollCardsProps> = ({ cards, speed = 20 }) => {
+const ScrollCards: React.FC<ScrollCardsProps> = ({ cards, speed = 40 }) => {
   const [isPaused, setIsPaused] = useState(false);
-  const duplicateCards = [...cards, ...cards];
+  const [animationDistance, setAnimationDistance] = useState(0);
+  const trackRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (trackRef.current && cards.length > 0) {
+     
+      const cardWidth = 250;
+      const gap = 20;
+      const totalCardWidth = (cardWidth + gap) * cards.length;
+      setAnimationDistance(totalCardWidth);
+    }
+  }, [cards]);
+
+  
+  const duplicateCards = [...cards, ...cards, ...cards];
 
   return (
     <ScrollContainer
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      <ScrollTrack $isPaused={isPaused} $speed={speed}>
+      <ScrollTrack 
+        ref={trackRef}
+        $isPaused={isPaused} 
+        $speed={speed}
+        $animationDistance={animationDistance}
+      >
         {duplicateCards.map((card, index) => (
           <ScrollCard
             key={index}
-            onClick={card.onClick}
+            className="scroll-card"
             role="button"
             tabIndex={0}
-            onKeyPress={(e) => {
-              if (e.key === "Enter" || e.key === " ") {
-                card.onClick?.();
-              }
-            }}
           >
             <CardMediaStyled
               component="img"
@@ -121,6 +159,11 @@ const ScrollCards: React.FC<ScrollCardsProps> = ({ cards, speed = 20 }) => {
               alt={card.alt || `Card ${index + 1}`}
               loading="lazy"
             />
+            {(card.title) && (
+              <TextOverlay>
+                {card.title && <CardTitle>{card.title}</CardTitle>}
+              </TextOverlay>
+            )}
           </ScrollCard>
         ))}
       </ScrollTrack>

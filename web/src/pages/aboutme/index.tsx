@@ -92,10 +92,11 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
                 color: "white",
               }}
             >
-              Built front-end and back-end features for a CRM tool and book
-              marketing website with Next.js, Material-UI, and NestJS. Enhanced
-              user experience and workflow efficiency through API integrations
-              that enabled role-based data access.
+              Developed front-end and back-end features for a CRM tool and a
+              book marketing website using Next.js, Material-UI, and NestJS.
+              < br/> 
+              Built a feature for users to fetch the latest data and implemented
+              a bug report form to improve issue tracking and resolution.
             </Typography>
           </Stack>
         </Paper>
@@ -133,10 +134,14 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
                 color: "white",
               }}
             >
-              Managed product backlog and created detailed documentation,
-              including user stories and acceptance criteria. Tested SaaS
-              platforms, identified bugs, and implemented improvements using
-              generative AI tools.
+              Managed epics, product backlog and wrote user stories with clear
+              acceptance criteria for SaaS projects. 
+              <br/>
+              Tested platforms, identified bugs, and recommended improvements using generative AI
+              tools.
+              <br />
+               Collaborated with cross-functional teams and gained
+              exposure to Agile/Scrum practices.
             </Typography>
           </Stack>
         </Paper>

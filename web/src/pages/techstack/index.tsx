@@ -5,35 +5,44 @@ const TechStack = () => {
   const firstRow = [
     {
       src: "/techstackimage/git.png",
+      title: "Git"
     },
     {
       src: "/techstackimage/reactJs.png",
+      title: "ReactJs"
     },
     {
       src: "/techstackimage/typescript.png",
+      title: "TypeScript"
     },
   ];
   const secondRow = [
     {
       src: "/techstackimage/yarn.png",
+      title: "Yarn"
     },
     {
       src: "/techstackimage/viteJs.png",
+      title: "Vite"
     },
     {
       src: "/techstackimage/prisma.png",
+      title: "Prisma ORM"
     },
   ];
 
   const thirdRow = [
     {
       src: "/techstackimage/postgres.png",
+      title: "Postgres"
     },
     {
       src: "/techstackimage/nestjs.png",
+      title: "Nestjs"
     },
     {
       src: "/techstackimage/nextjs.png",
+      title: "NextJs"
     },
   ];
 
