@@ -15,10 +15,10 @@ const Portfolio = () => {
     const currentScrollY = window.scrollY;
 
     if (currentScrollY < lastScrollY) {
-      // Scrolling UP
+   
       setShowHeader(true);
     } else {
-      // Scrolling DOWN
+    
       setShowHeader(false);
     }
 

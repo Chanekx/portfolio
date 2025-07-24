@@ -4,36 +4,36 @@ import ScrollCards from "../../parts/scrollcard";
 const TechStack = () => {
   const firstRow = [
     {
-      src: "/src/components/techstackimage/git.png",
+      src: "/techstackimage/git.png",
     },
     {
-      src: "/src/components/techstackimage/reactJs.png",
+      src: "/techstackimage/reactJs.png",
     },
     {
-      src: "/src/components/techstackimage/typescript.png",
+      src: "/techstackimage/typescript.png",
     },
   ];
   const secondRow = [
     {
-      src: "/src/components/techstackimage/yarn.png",
+      src: "/techstackimage/yarn.png",
     },
     {
-      src: "/src/components/techstackimage/viteJs.png",
+      src: "/techstackimage/viteJs.png",
     },
     {
-      src: "/src/components/techstackimage/prisma.png",
+      src: "/techstackimage/prisma.png",
     },
   ];
 
   const thirdRow = [
     {
-      src: "/src/components/techstackimage/postgres.png",
+      src: "/techstackimage/postgres.png",
     },
     {
-      src: "/src/components/techstackimage/nestjs.png",
+      src: "/techstackimage/nestjs.png",
     },
     {
-      src: "/src/components/techstackimage/nextjs.png",
+      src: "/techstackimage/nextjs.png",
     },
   ];
 

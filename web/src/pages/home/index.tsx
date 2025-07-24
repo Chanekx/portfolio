@@ -58,7 +58,7 @@ const HomePage = ({ sx }: HomePageProps) => {
                 }}
               >
                 <img
-                  src="/src/assets/me.jpg"
+                  src="/me.jpg"
                   alt="Christian"
                   style={{
                     width: "100%",
@@ -90,6 +90,7 @@ const HomePage = ({ sx }: HomePageProps) => {
             >
               I'm a Full Stack Developer
             </Typography>
+            <Typography></Typography>
           </Stack>
         </Stack>
       </Stack>
