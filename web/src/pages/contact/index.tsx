@@ -1,12 +1,16 @@
 import { Button, Stack, TextField, Typography, Paper } from "@mui/material";
 
+
 const ContactMe = () => {
   return (
     <Stack
       justifyContent="center"
       alignItems="center"
-      height="100%"
-      sx={{ backgroundColor: "#f5f5f5" }}
+      minHeight="130vh"
+      sx={{
+        background: "linear-gradient(180deg, #222831 0%, #1a1f28 100%)",
+        paddingTop: "5%",
+      }}
     >
       <Paper
         elevation={6}
