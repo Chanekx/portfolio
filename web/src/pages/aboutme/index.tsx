@@ -38,12 +38,12 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
             textAlign: "justify",
           }}
         >
-          I am a passionate Full Stack Developer with a strong foundation in
-          both front-end and back-end technologies. My journey in web
-          development has equipped me with the skills to create responsive,
-          user-friendly applications that solve real-world problems. I enjoy
-          tackling complex challenges and turning ideas into reality through
-          clean, efficient code.
+          I’m a passionate Full Stack Developer and recent Computer Science
+          graduate with a strong foundation in both front-end and back-end
+          technologies. My journey in web development has equipped me with the
+          skills to build responsive, user-friendly applications that solve
+          real-world problems. I thrive on tackling complex challenges and enjoy
+          turning ideas into reality through clean, efficient code.
         </Typography>
       </Stack>
 
@@ -94,7 +94,7 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
             >
               Developed front-end and back-end features for a CRM tool and a
               book marketing website using Next.js, Material-UI, and NestJS.
-              < br/> 
+              <br />
               Built a feature for users to fetch the latest data and implemented
               a bug report form to improve issue tracking and resolution.
             </Typography>
@@ -135,13 +135,13 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
               }}
             >
               Managed epics, product backlog and wrote user stories with clear
-              acceptance criteria for SaaS projects. 
-              <br/>
-              Tested platforms, identified bugs, and recommended improvements using generative AI
-              tools.
+              acceptance criteria for SaaS projects.
               <br />
-               Collaborated with cross-functional teams and gained
-              exposure to Agile/Scrum practices.
+              Tested platforms, identified bugs, and recommended improvements
+              using generative AI tools.
+              <br />
+              Collaborated with cross-functional teams and gained exposure to
+              Agile/Scrum practices.
             </Typography>
           </Stack>
         </Paper>
