@@ -1,4 +1,4 @@
-import { Stack, Typography, type SxProps } from "@mui/material";
+import { Stack, Typography, Button, type SxProps } from "@mui/material";
 
 type HomePageProps = {
   sx?: SxProps;
@@ -70,6 +70,7 @@ const HomePage = ({ sx }: HomePageProps) => {
               </Stack>
             </Stack>
           </Stack>
+
           <Stack spacing={4}>
             <Typography
               variant="h1"
@@ -90,7 +91,26 @@ const HomePage = ({ sx }: HomePageProps) => {
             >
               I'm a Full Stack Developer
             </Typography>
-            <Typography></Typography>
+
+            <a
+              href="/resume.pdf"
+              download="Circulado_Portfolio (UPDATEDJULY252025).pdf"
+              style={{ textDecoration: "none" }}
+            >
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: "#00ff88",
+                  color: "#000",
+                  fontWeight: "bold",
+                  "&:hover": {
+                    backgroundColor: "#00cc66",
+                  },
+                }}
+              >
+                Download Resume
+              </Button>
+            </a>
           </Stack>
         </Stack>
       </Stack>

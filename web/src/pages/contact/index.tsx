@@ -1,7 +1,9 @@
 import { Button, Stack, TextField, Typography, Paper } from "@mui/material";
+import { useHooks } from "./hooks";
 
 
 const ContactMe = () => {
+  const {handleSubmit} = useHooks()
   return (
     <Stack
       justifyContent="center"
@@ -36,6 +38,7 @@ const ContactMe = () => {
             rows={4}
           />
           <Button
+            onClick={handleSubmit}
             variant="contained"
             color="primary"
             size="large"
