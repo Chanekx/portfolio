@@ -93,7 +93,7 @@ const HomePage = ({ sx }: HomePageProps) => {
             </Typography>
 
             <a
-              href="/resume.pdf"
+              href="Circulado_Portfolio (UPDATEDJULY252025).pdf"
               download="Circulado_Portfolio (UPDATEDJULY252025).pdf"
               style={{ textDecoration: "none" }}
             >
