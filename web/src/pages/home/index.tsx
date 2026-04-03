@@ -12,7 +12,7 @@ const HomePage = ({ sx }: HomePageProps) => {
 
   return (
     <Stack
-      minHeight="130vh"
+      minHeight={{ xs: "100dvh", md: "130vh" }}
       width="100%"
       alignItems="center"
       justifyContent="center"

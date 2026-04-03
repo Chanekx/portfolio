@@ -4,6 +4,17 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-h, 60px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html, body, #root {
   width: 100%;
   height: 100%;
@@ -13,7 +24,18 @@ html, body, #root {
 }
 
 :root {
-// ... existing code ...
+  color-scheme: dark;
+  --color-bg-deep: #1a1f28;
+  --color-bg-mid: #222831;
+  --color-accent: #00ff88;
+  --color-accent-dim: #00cc66;
+  --header-h: 60px;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --header-h: 70px;
+  }
 }
 
 @keyframes gradient {

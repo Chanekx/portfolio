@@ -7,35 +7,39 @@ type AboutMeSectionProps = {
 const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
   return (
     <Stack
-      minHeight="130vh"
+      minHeight={{ xs: "auto", md: "130vh" }}
       width="100%"
       alignItems="center"
       justifyContent="center"
-      spacing={8}
-      padding={8}
+      spacing={{ xs: 4, md: 8 }}
+      padding={{ xs: 2, sm: 4, md: 8 }}
       sx={{
         background: "linear-gradient(180deg, #222831 0%, #1a1f28 100%)",
-        paddingTop: "5%",
+        paddingTop: { xs: "clamp(72px, 12vw, 96px)", md: "5%" },
+        paddingBottom: { xs: 4, md: 8 },
         ...sx,
       }}
     >
-      <Stack spacing={4} maxWidth="800px" sx={{ paddingTop: "5%" }}>
+      <Stack spacing={{ xs: 3, md: 4 }} maxWidth="800px" width="100%">
         <Typography
           variant="h2"
           sx={{
             fontWeight: "bold",
             color: "#00ff88",
             textShadow: "0 0 10px rgba(0, 255, 136, 0.3)",
+            fontSize: { xs: "1.75rem", sm: "2rem", md: "3rem" },
           }}
         >
           About Me
         </Typography>
         <Typography
-          variant="h5"
+          variant="h6"
+          component="p"
           sx={{
             lineHeight: 1.8,
             color: "white",
-            textAlign: "justify",
+            textAlign: { xs: "left", sm: "justify" },
+            fontSize: { xs: "1rem", md: "1.25rem" },
           }}
         >
           I’m a passionate Full Stack Developer and recent Computer Science
@@ -47,13 +51,14 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
         </Typography>
       </Stack>
 
-      <Stack spacing={6} maxWidth="800px">
+      <Stack spacing={{ xs: 4, md: 6 }} maxWidth="800px" width="100%">
         <Typography
           variant="h2"
           sx={{
             fontWeight: "bold",
             color: "#00ff88",
             textShadow: "0 0 10px rgba(0, 255, 136, 0.3)",
+            fontSize: { xs: "1.75rem", sm: "2rem", md: "3rem" },
           }}
         >
           Experience
@@ -62,7 +67,7 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
         <Paper
           elevation={3}
           sx={{
-            padding: 4,
+            padding: { xs: 2, sm: 3, md: 4 },
             background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(10px)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -74,15 +79,20 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
         >
           <Stack spacing={2}>
             <Typography
-              variant="h4"
+              variant="h5"
+              component="h3"
               sx={{
                 color: "#00ff88",
                 fontWeight: "bold",
+                fontSize: { xs: "1.1rem", sm: "1.35rem", md: "1.5rem" },
               }}
             >
               Software Engineer Intern - HomeSourced Inc.
             </Typography>
-            <Typography variant="h6" sx={{ color: "#00ff88" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: "#00ff88", fontSize: { xs: "0.95rem", md: "1.25rem" } }}
+            >
               Jan 2025 - June 2025
             </Typography>
             <Typography
@@ -90,6 +100,7 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
               sx={{
                 lineHeight: 1.8,
                 color: "white",
+                fontSize: { xs: "0.95rem", md: "1rem" },
               }}
             >
               Developed front-end and back-end features for a CRM tool and a
@@ -104,7 +115,7 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
         <Paper
           elevation={3}
           sx={{
-            padding: 4,
+            padding: { xs: 2, sm: 3, md: 4 },
             background: "rgba(255, 255, 255, 0.05)",
             backdropFilter: "blur(10px)",
             border: "1px solid rgba(255, 255, 255, 0.1)",
@@ -116,15 +127,20 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
         >
           <Stack spacing={2}>
             <Typography
-              variant="h4"
+              variant="h5"
+              component="h3"
               sx={{
                 color: "#00ff88",
                 fontWeight: "bold",
+                fontSize: { xs: "1.1rem", sm: "1.35rem", md: "1.5rem" },
               }}
             >
               Product Owner Intern - Ruralnet Inc
             </Typography>
-            <Typography variant="h6" sx={{ color: "#00ff88" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: "#00ff88", fontSize: { xs: "0.95rem", md: "1.25rem" } }}
+            >
               Sept 2024 - Dec 2024
             </Typography>
             <Typography
@@ -132,6 +148,7 @@ const AboutMeSection = ({ sx }: AboutMeSectionProps) => {
               sx={{
                 lineHeight: 1.8,
                 color: "white",
+                fontSize: { xs: "0.95rem", md: "1rem" },
               }}
             >
               Managed epics, product backlog and wrote user stories with clear
