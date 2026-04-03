@@ -83,6 +83,7 @@ const Header = ({ setSection, activeSection, sx }: HeaderProps) => {
       >
         <Stack flexGrow={1} direction="row" alignItems="center">
           <Button
+            onClick={() => handleSectionClick("home")}
             sx={{
               color: "#00ff88",
               fontWeight: "bold",
